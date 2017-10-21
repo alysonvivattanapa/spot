@@ -85,51 +85,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 
 //            annotationNode.scaleRelativeToDistance = true
                 
-                let rect = CGRect(x: 0, y: 0, width: 50, height: 50)
+                let locationManager = CLLocationManager()
+                if CLLocationManager.locationServicesEnabled() {
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                    locationManager.startUpdatingLocation()
+                }
                 
-                let tbarLabelView = TBARLabelView(rect, text: "DISTANCE")
+                        if let myLocation = locationManager.location {
+                            self.currentLat = myLocation.coordinate.latitude as NSNumber
+                            self.currentLong = myLocation.coordinate.longitude as NSNumber
                 
-                let viewView = tbarLabelView.imageForView()
+                            let distanceInMeters = location.distance(from: myLocation)
+                            self.locationDistance = distanceInMeters
                 
-                let annotationNode2 = LocationAnnotationNode(location: location, image: viewView)
+                            let roundedDistance = distanceInMeters.rounded()
+                            
+                            let rect = CGRect(x: 0, y: 0, width: 50, height: 50)
+                            
+                            let tbarLabelView = TBARLabelView(rect, text:"\(roundedDistance) m")
+                            
+                            let viewView = tbarLabelView.imageForView()
+                            
+                            let annotationNode2 = LocationAnnotationNode(location: location, image: viewView)
+                            
+                            
+                            self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode2)
+                        }
                 
                 
-            self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode2)
+          
                 
         self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
                 
+               
           
             }
         }
-       
-        
-        let locationManager = CLLocationManager()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-        
-//        if let myLocation = locationManager.location {
-//            currentLat = myLocation.coordinate.latitude as NSNumber
-//            currentLong = myLocation.coordinate.longitude as NSNumber
-//
-//            let distanceInMeters = location.distance(from: myLocation)
-//            locationDistance = distanceInMeters
-//
-//            nodeLocationAndDistanceLabel.text = "House behind me, distance from current location is \(distanceInMeters) m."
-//            nodeLocationAndDistanceLabel.sizeToFit()
-//            print(distanceInMeters)
-//
-//            let roundedDistance = distanceInMeters.rounded()
-//
-//            print("House behind me, distance from current location is \(roundedDistance) m.")
-//        }
-        
-        
-     //   sceneLocationView.addLocationNodeWithConfirmedLocati//on(locationNode: annotationNode)
-//
-//    }
+
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
