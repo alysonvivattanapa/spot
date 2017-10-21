@@ -30,27 +30,7 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locManager = CLLocationManager()
-        locManager.requestWhenInUseAuthorization()
-        
-        self.ref = Database.database().reference()
-        
-        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways ){
-            
-            let currentLocation = locManager.location
-            
-            self.currentLat = currentLocation!.coordinate.latitude as NSNumber
-            self.currentLong = currentLocation!.coordinate.longitude as NSNumber
-            
-            let date = Date()
-            let dateFormat = DateFormatter()
-            let stringDate = dateFormat.string(from: date)
-            let id = NSUUID().uuidString
 
-
-       
-    }
     }
 
     @IBAction func setStatusButtonPressed(_ sender: UIButton) {
