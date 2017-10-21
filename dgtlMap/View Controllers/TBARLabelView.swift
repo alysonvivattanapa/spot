@@ -21,8 +21,9 @@ class TBARLabelView: UIView {
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.text = text;
+        label.textColor = UIColor.white
         self.addSubview(label)
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.clear
 //        self.layer.borderColor = TBStyle.sharedInstance().graniteColors[0].cgColor
                 self.layer.borderColor = UIColor.lightGray.cgColor
 

@@ -81,9 +81,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let annotationNode = LocationAnnotationNode(location: location, image: animatedImage)
                 
-               
-                
-//            annotationNode.scaleRelativeToDistance = true
+            annotationNode.scaleRelativeToDistance = true
                 
                 let locationManager = CLLocationManager()
                 if CLLocationManager.locationServicesEnabled() {
@@ -101,7 +99,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 
                             let roundedDistance = distanceInMeters.rounded()
                             
-                            let rect = CGRect(x: 0, y: 0, width: 50, height: 50)
+                            let rect = CGRect(x: 0, y: 0, width: 75, height: 50)
                             
                             let tbarLabelView = TBARLabelView(rect, text:"\(roundedDistance) m")
                             
