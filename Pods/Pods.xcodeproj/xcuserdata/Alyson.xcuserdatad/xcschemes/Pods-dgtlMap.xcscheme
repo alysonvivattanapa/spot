@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB7328E108DEBF600E346FC8DF18A2F3"
+               BlueprintIdentifier = "AAD3CB21B90687C703EB534047A40FCA"
                BuildableName = "Pods_dgtlMap.framework"
                BlueprintName = "Pods-dgtlMap"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB7328E108DEBF600E346FC8DF18A2F3"
+            BlueprintIdentifier = "AAD3CB21B90687C703EB534047A40FCA"
             BuildableName = "Pods_dgtlMap.framework"
             BlueprintName = "Pods-dgtlMap"
             ReferencedContainer = "container:Pods.xcodeproj">

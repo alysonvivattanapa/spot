@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LineupViewController" customModule="dgtlMap" customModuleProvider="target">
             <connections>
                 <outlet property="setStatusButton" destination="5bB-f0-dMi" id="IsV-gQ-QQS"/>
+                <outlet property="textField" destination="ZJA-Sy-zbe" id="Sir-1p-ErI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,11 +32,24 @@
                         <action selector="setStatusButtonPressed:" destination="-1" eventType="touchUpInside" id="9ZY-NK-r8j"/>
                     </connections>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AL here! Bring beers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-Sy-zbe">
+                    <rect key="frame" x="32" y="364.5" width="311" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="5GB-b8-uFz"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5bB-f0-dMi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Hf-1H-9CV"/>
                 <constraint firstItem="5bB-f0-dMi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GVZ-uz-Ees"/>
+                <constraint firstItem="ZJA-Sy-zbe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="aJy-uI-vyc"/>
+                <constraint firstItem="ZJA-Sy-zbe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nMZ-HH-ulY"/>
+                <constraint firstItem="ZJA-Sy-zbe" firstAttribute="top" secondItem="5bB-f0-dMi" secondAttribute="bottom" constant="16" id="psQ-ZM-4eo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZJA-Sy-zbe" secondAttribute="trailing" constant="32" id="rMI-F4-7e1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="151.5"/>

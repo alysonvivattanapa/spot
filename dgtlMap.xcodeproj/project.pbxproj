@@ -18,6 +18,7 @@
 		F261F2381F9A68AA00FB5A12 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F2371F9A68AA00FB5A12 /* Model.swift */; };
 		F261F23A1F9AB43600FB5A12 /* BaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F2391F9AB43600FB5A12 /* BaseAPIService.swift */; };
 		F261F23E1F9AE7B600FB5A12 /* TBARLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F23D1F9AE7B600FB5A12 /* TBARLabelView.swift */; };
+		F2E1C0361F9B500300B1EE85 /* lava.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2E1C0351F9B500300B1EE85 /* lava.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F261F2371F9A68AA00FB5A12 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F261F2391F9AB43600FB5A12 /* BaseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIService.swift; sourceTree = "<group>"; };
 		F261F23D1F9AE7B600FB5A12 /* TBARLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBARLabelView.swift; sourceTree = "<group>"; };
+		F2E1C0351F9B500300B1EE85 /* lava.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lava.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				F261F2351F9A674400FB5A12 /* GoogleService-Info.plist */,
 				F242AA191F86A19700B780B3 /* AppDelegate.swift */,
 				F242AA1B1F86A19700B780B3 /* Assets.xcassets */,
+				F2E1C0351F9B500300B1EE85 /* lava.gif */,
 				F242AA1D1F86A19700B780B3 /* LaunchScreen.storyboard */,
 				F242AA201F86A19700B780B3 /* Info.plist */,
 			);
@@ -188,6 +191,7 @@
 			files = (
 				F23FED241F914143008DFA60 /* LineupViewController.xib in Resources */,
 				F242AA1C1F86A19700B780B3 /* Assets.xcassets in Resources */,
+				F2E1C0361F9B500300B1EE85 /* lava.gif in Resources */,
 				F261F2361F9A674400FB5A12 /* GoogleService-Info.plist in Resources */,
 				F242AA1F1F86A19700B780B3 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -219,6 +223,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-dgtlMap/Pods-dgtlMap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -226,6 +231,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",

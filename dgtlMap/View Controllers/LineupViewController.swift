@@ -11,8 +11,9 @@ import CoreLocation
 import MapKit
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
-class LineupViewController: UIViewController, CLLocationManagerDelegate {
+class LineupViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
     var currentLong : NSNumber?
     var currentLat: NSNumber?
@@ -20,6 +21,7 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
     var ref: DatabaseReference!
     
 
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var setStatusButton: UIButton!
     
     
@@ -31,18 +33,21 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        textField.delegate = self
         
     }
 
     @IBAction func setStatusButtonPressed(_ sender: UIButton) {
-        
         setStatus()
-        
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func setStatus(){
-//    func setStatus(_ status: User) {
     
         let locManager = CLLocationManager()
         locManager.requestWhenInUseAuthorization()
@@ -57,19 +62,28 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
             self.currentLat = currentLocation!.coordinate.latitude as NSNumber
             self.currentLong = currentLocation!.coordinate.longitude as NSNumber
             
-//            let date = Date()
-//            let dateFormat = DateFormatter()
-//            let stringDate = dateFormat.string(from: date)
-            // this code doesn't save a time; it saves an empty string
+            let date = Date()
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            let stringDate = dateFormat.string(from: date)
             
-            let currentTimestamp = ServerValue.timestamp()
             
-            let id = NSUUID().uuidString
-        
-            let dict = ["longitude" : self.currentLong, "latitude" : self.currentLat, "id" : "12345", "imageID" : "11111", "time" : currentTimestamp] as [String : Any]
-        self.ref.child(id).setValue(dict, withCompletionBlock: { (error, data) in
-            print("yay")
-        })
+            guard let id = UserDefaults.standard.value(forKey: "ID") else {return}
+            
+            
+            let dict = ["longitude" : self.currentLong, "latitude" : self.currentLat, "id" : id, "imageID" : "11111", "time" : stringDate, "name" : self.textField.text ?? ""] as [String : Any]
+            self.ref.child(String(describing: id)).setValue(dict, withCompletionBlock: { (error, data) in
+                print("Saved data")
+                let alert = UIAlertController(title: "Done!", message: "Your location is set!", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "Top!", style: UIAlertActionStyle.default) { (action) in
+                    self.dismiss(animated: true, completion: {
+                        
+                    })
+                }
+                alert.addAction(ok)
+                self.present(alert, animated: true) {
+                }
+            })
 
         }
     }

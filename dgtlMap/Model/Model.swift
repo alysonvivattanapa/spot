@@ -17,7 +17,7 @@ struct User {
     var id : String
     // "user1"
     
-//    var name : String
+    var name : String
 //    // "Alyson"
     
     var imageID : String
@@ -26,20 +26,6 @@ struct User {
     var timeStamp : String
     //"12:09:44.93"
     
-//    var longitude : NSNumber
-//
-//    var latitude : NSNumber
-//
-//    var id : NSString
-//    // "user1"
-//
-//    var name : NSString
-//    // "Alyson"
-//
-//    var imageID : NSString
-//    //"fsgegewr"
-//
-//    var timeStamp : NSString
-//    //"12:09:44.93"
-    
 }
+
+

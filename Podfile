@@ -10,5 +10,6 @@ target 'dgtlMap' do
 pod 'ARCL'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 end

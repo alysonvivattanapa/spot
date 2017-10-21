@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,12 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
-        
-//        let rootView = MapViewController()
-//
-//        self.window?.rootViewController = rootView
-        
+
         FirebaseApp.configure()
+        
+        if UserDefaults.standard.value(forKey: "ID") == nil {
+            Auth.auth().signInAnonymously() { (user, error) in
+                if let id = user?.uid {
+                    UserDefaults.standard.set(id, forKey: "ID")
+                }
+            }
+        }
         
         let tabBarController = UITabBarController()
         let tabVC1 = MapViewController()
@@ -44,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
-        
     
         return true
     }
@@ -52,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.printTimer(_:)), userInfo: nil, repeats: true)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -61,9 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
-    @objc func printTimer(_ timer : Timer) {
-        print("hellooo")
-    }
+
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }

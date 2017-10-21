@@ -24,9 +24,8 @@ class TBARLabelView: UIView {
         label.textColor = UIColor.white
         self.addSubview(label)
         self.backgroundColor = UIColor.clear
-//        self.layer.borderColor = TBStyle.sharedInstance().graniteColors[0].cgColor
-                self.layer.borderColor = UIColor.lightGray.cgColor
-
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 10
     }
