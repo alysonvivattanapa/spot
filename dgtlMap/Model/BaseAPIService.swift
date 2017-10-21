@@ -31,9 +31,9 @@ struct BaseAPIService {
                 
                 let longitude = oneUser.value(forKey: "longitude") as! NSNumber
                 
-                let time = oneUser.value(forKey: "time") as! String
+                let time = oneUser.value(forKey: "time") as! NSNumber
                 
-                let newUserObject = User(longitude: "\(longitude)", latitude: "\(latitude)", id: id, imageID: imageID, timeStamp: time)
+                let newUserObject = User(longitude: "\(longitude)", latitude: "\(latitude)", id: id, imageID: imageID, timeStamp: "\(time)")
                 
                 arrayOfUserObjects.append(newUserObject)
             }

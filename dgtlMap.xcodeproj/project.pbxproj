@@ -17,6 +17,7 @@
 		F261F2361F9A674400FB5A12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F261F2351F9A674400FB5A12 /* GoogleService-Info.plist */; };
 		F261F2381F9A68AA00FB5A12 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F2371F9A68AA00FB5A12 /* Model.swift */; };
 		F261F23A1F9AB43600FB5A12 /* BaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F2391F9AB43600FB5A12 /* BaseAPIService.swift */; };
+		F261F23E1F9AE7B600FB5A12 /* TBARLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261F23D1F9AE7B600FB5A12 /* TBARLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F261F2351F9A674400FB5A12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F261F2371F9A68AA00FB5A12 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F261F2391F9AB43600FB5A12 /* BaseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIService.swift; sourceTree = "<group>"; };
+		F261F23D1F9AE7B600FB5A12 /* TBARLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBARLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F23FED211F914143008DFA60 /* LineupViewController.swift */,
 				F23FED221F914143008DFA60 /* LineupViewController.xib */,
 				F242AA261F86A7C000B780B3 /* MapViewController.swift */,
+				F261F23D1F9AE7B600FB5A12 /* TBARLabelView.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				F242AA1A1F86A19700B780B3 /* AppDelegate.swift in Sources */,
 				F242AA271F86A7C000B780B3 /* MapViewController.swift in Sources */,
+				F261F23E1F9AE7B600FB5A12 /* TBARLabelView.swift in Sources */,
 				F261F23A1F9AB43600FB5A12 /* BaseAPIService.swift in Sources */,
 				F23FED231F914143008DFA60 /* LineupViewController.swift in Sources */,
 				F261F2381F9A68AA00FB5A12 /* Model.swift in Sources */,

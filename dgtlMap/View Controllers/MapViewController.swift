@@ -46,11 +46,59 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let location = CLLocation(coordinate: coordinate, altitude: 1)
                 
             let image = UIImage(named: "pin")!
-            
-             let annotationNode = LocationAnnotationNode(location: location, image: image)
+             
+                var images = [UIImage]()
+                var animatedImage: UIImage!
+                var test0 = UIImage(named: "Test000")
+                var test1 = UIImage(named: "Test001")
+                var test2 = UIImage(named: "Test002")
+                var test3 = UIImage(named: "Test003")
+                var test4 = UIImage(named: "Test004")
+                var test5 = UIImage(named: "Test005")
+                var test6 = UIImage(named: "Test006")
+                var test7 = UIImage(named: "Test007")
+                var test8 = UIImage(named: "Test008")
+                var test9 = UIImage(named: "Test009")
+                var test10 = UIImage(named: "Test010")
+                var test11 = UIImage(named: "Test011")
+                var test12 = UIImage(named: "Test012")
+                var test13 = UIImage(named: "Test013")
+                var test14 =  UIImage(named: "Test014")
+                var test15 = UIImage(named: "Test015")
+                var test16 = UIImage(named: "Test016")
+                var test17 = UIImage(named: "Test017")
+                var test18 = UIImage(named: "Test018")
+                var test19 = UIImage(named: "Test019")
+                var test20 = UIImage(named: "Test020")
+                var test21 = UIImage(named: "Test021")
+                var test22 = UIImage(named: "Test022")
+                var test23 = UIImage(named: "Test023")
                 
-            annotationNode.scaleRelativeToDistance = true
+            
+                images = [test0!, test1!, test2!, test3!, test4!, test5!, test6!, test7!, test8!, test9!, test10!, test11!, test12!, test13!, test14!, test15!, test16!, test17!, test18!, test19!, test20!, test21!, test22!, test23!]
+                
+                animatedImage = UIImage.animatedImage(with: images, duration: 1.0)
+                
+                let annotationNode = LocationAnnotationNode(location: location, image: animatedImage)
+                
+               
+                
+//            annotationNode.scaleRelativeToDistance = true
+                
+                let rect = CGRect(x: 0, y: 0, width: 50, height: 50)
+                
+                let tbarLabelView = TBARLabelView(rect, text: "DISTANCE")
+                
+                let viewView = tbarLabelView.imageForView()
+                
+                let annotationNode2 = LocationAnnotationNode(location: location, image: viewView)
+                
+                
+            self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode2)
+                
         self.sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+                
+          
             }
         }
        

@@ -19,6 +19,7 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
     
     var ref: DatabaseReference!
     
+
     @IBOutlet weak var setStatusButton: UIButton!
     
     
@@ -31,6 +32,7 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
 
+        
     }
 
     @IBAction func setStatusButtonPressed(_ sender: UIButton) {
@@ -55,14 +57,16 @@ class LineupViewController: UIViewController, CLLocationManagerDelegate {
             self.currentLat = currentLocation!.coordinate.latitude as NSNumber
             self.currentLong = currentLocation!.coordinate.longitude as NSNumber
             
-            let date = Date()
-            let dateFormat = DateFormatter()
-            let stringDate = dateFormat.string(from: date)
+//            let date = Date()
+//            let dateFormat = DateFormatter()
+//            let stringDate = dateFormat.string(from: date)
+            // this code doesn't save a time; it saves an empty string
+            
+            let currentTimestamp = ServerValue.timestamp()
+            
             let id = NSUUID().uuidString
-
         
-        
-            let dict = ["longitude" : self.currentLong, "latitude" : self.currentLat, "id" : "12345", "imageID" : "11111", "time" : stringDate] as [String : Any]
+            let dict = ["longitude" : self.currentLong, "latitude" : self.currentLat, "id" : "12345", "imageID" : "11111", "time" : currentTimestamp] as [String : Any]
         self.ref.child(id).setValue(dict, withCompletionBlock: { (error, data) in
             print("yay")
         })
